@@ -22,7 +22,7 @@ div > div:hover {
     line-height: 100px;
     font-weight: bold;
 }
-.a1{
+/*.a1{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -53,7 +53,6 @@ div > div:hover {
     background-position: -300px 0px;
     width: 100px;
     height: 100px;
-    /*margin-right: 60%;*/
 }
 .a5{
     margin: 0;
@@ -86,7 +85,6 @@ div > div:hover {
     background-position: -300px -100px;
     width: 100px;
     height: 100px;
-    /*margin-right: 60%;*/
 }
 .a9{
     margin: 0;
@@ -119,7 +117,6 @@ div > div:hover {
     width: 100px;
     height: 100px;
     background-image: url(background.jpg);
-    /*margin-right: 60%;*/
 }
 .a13{
     margin: 0;
@@ -144,4 +141,4 @@ div > div:hover {
     width: 100px;
     background-image: url(background.jpg);
     height: 100px;
-}
+}*/
