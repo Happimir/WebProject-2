@@ -130,6 +130,7 @@ div > div:hover {
     height: 100px;
 }
 .a14{
+    position:relative;
     margin: 0;
     float: left;
     background-position: -100px -300px;
@@ -138,6 +139,7 @@ div > div:hover {
     height: 100px;
 }
 .a15 {
+    position: relative;
     margin: 0;
     float: left;
     background-position: -200px -300px;
