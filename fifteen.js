@@ -8,6 +8,8 @@ var topAdj;
 var bottomAdj;
 var leftAdj;
 var rightAdj;
+var rand;
+
 
 window.onload = function () {
     var i = 1;
@@ -148,13 +150,6 @@ function updateAdjacent(){
 }
 
 /*
- * will make a number of legal moves to 'shuffle' the board
- */
-function shuffle(){
-
-}
-
-/*
  * Will return true if pieces are in original order
  */
 function checkWin(){
@@ -189,3 +184,29 @@ function getX(obj) {
 function getY(obj) {
     return parseFloat(obj.style.top);
 }
+
+/*
+ * will make a number of legal moves to 'shuffle' the board
+ */
+document.getElementById("shufflebutton").addEventListener("click", function(){
+	var i;
+	for(i = 0; i < 1000; i++){
+		rand = Math.floor((Math.random() * 4) + 1)
+		if(rand == 1 && topAdj != null){
+			switchTiles(topAdj,blankTile);
+			updateAdjacent();
+		} else
+		if(rand == 2 && bottomAdj != null){
+			switchTiles(bottomAdj,blankTile);
+			updateAdjacent();
+		} else
+		if(rand == 3 && leftAdj != null){
+			switchTiles(leftAdj,blankTile);
+			updateAdjacent();
+		} else
+		if(rand == 4 && rightAdj != null){
+			switchTiles(rightAdj,blankTile);
+			updateAdjacent();
+		}
+	}
+});
