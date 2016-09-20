@@ -1,5 +1,7 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
+
+// GLOBAL VARIABLES
 var children;
 var blankTile;
 var topAdj;
@@ -43,59 +45,64 @@ window.onload = function () {
         }
     }
 
+    // sets the 16th div to be the blank tile
     blankTile = document.getElementById("a16");
 
-    updateAdjacent(blankTile);
-
-    // initializes the adjacent variables
-    /*document.getElementById("a12").className = "adjacent";
-    document.getElementById("a15").className = "adjacent";//*/
+    // will find tiles adjacent to the blank tile, and set their class property
+    updateAdjacent();
 };
 
 
 function test() {
-    alert()
-    //alert(getOffset(this).left + " " + getOffset(this).top);
-    //I think left is X position, while top is Y position.
+    // can put code here and set event listener for this function
+    // if you want to test a behavior, or read a value at runtime
+
+    /* ------ SHOULD BE DELETED BEFORE SUBMIT ------*/
 }
 
 
-// This function is called whenever a tile is clicked on
+/*
+ * This function is called every time a tile is clicked on.
+ * Every time an adjacent tile is clicked, it's position must
+ * switched with the blank tile and the adjacent tile variables
+ * must be updated.
+**/
 function action(){
     if( this.className == "adjacent" ){
-        /*var dir = null;
 
-        // checks for which adjacent tile this is
-        if( this == leftAdj ){ dir = "right"; }
+        // current adjacent tile switches pos with blank tile
+        switchTiles( this, blankTile );
 
-        if(this == rightAdj ){ dir = "left"; }
+        // removes old adj tile, and sets new adj tiles
+        updateAdjacent();
 
-        if(this == topAdj ){ dir = "down"; }
-
-        if(this == bottomAdj ){ dir = "up"; }
-
-        if( dir != null ){ moveTile(this, dir); }*/
-
-        var x1,x2,y1,y2;
-
-        // gets top and left styles of both tiles
-        x1 = this.style.left;
-        y1 = this.style.top;
-        x2 = blankTile.style.left;
-        y2 = blankTile.style.top;
-
-        // switches the top and left styles of the two tiles
-        this.style.left = x2;
-        this.style.top = y2;
-        blankTile.style.left = x1;
-        blankTile.style.top = y1;
-
-        updateAdjacent(blankTile);
+        // checkWin();
     }
 }
 
-// will return an array of the tiles adjacent to the given tile
-function updateAdjacent(obj){
+// will switch the positions of the two given tiles
+function switchTiles( t1, t2 ){
+    // will store tile 1's original position
+    var x,y;
+
+    // gets original position of tile 1
+    x = t1.style.left;
+    y = t1.style.top;
+
+    // moves tile 1 to tile 2's position
+    t1.style.left = t2.style.left;
+    t1.style.top = t2.style.top;
+
+    // moves tile 2 to tile 1's original position
+    t2.style.left = x;
+    t2.style.top = y;
+}
+
+/*
+ * Will remove adjacent class from old adj tiles, and add the
+ * adjacent class to new adj tiles
+ */
+function updateAdjacent(){
     // REMOVE OLD ADJACENT
     if( rightAdj != null ){ rightAdj.removeAttribute("class"); }
     if( leftAdj != null ){ leftAdj.removeAttribute("class"); }
@@ -104,61 +111,59 @@ function updateAdjacent(obj){
 
 
     // FIND NEW ADJACENT
-    var x = getX(obj);
-    var y = getY(obj);
+    var x = getX(blankTile);
+    var y = getY(blankTile);
 
-    // find tile to right (in bounds)
+    // find tile to right
     if( x + 104 <= 312 ){
         rightAdj = getTileAt(x+104, y);
         rightAdj.className = "adjacent";
-    }else{
+    }else{ // if tile is out of bounds
         rightAdj = null;
     }
 
-    // find tile to left (in bounds)
+    // find tile to left
     if( x - 104 >= 0 ){
         leftAdj = getTileAt(x-104,y);
         leftAdj.className = "adjacent";
-    }else{
+    }else{ // if tile is out of bounds
         leftAdj = null;
     }
 
-    // find tile below (in bounds)
+    // find tile below
     if( y + 104 <= 312 ){
         bottomAdj = getTileAt(x,y+104);
         bottomAdj.className = "adjacent";
-    }else{
+    }else{ // if tile is out of bounds
         bottomAdj = null;
     }
 
-    // find tile above (in bounds)
+    // find tile above
     if( y - 104 >= 0 ){
         topAdj = getTileAt(x,y-104);
         topAdj.className = "adjacent";
-    }else{
+    }else{ // if tile is out of bounds
         topAdj = null;
     }
 }
 
-// this function will move the given obj(tile) one block in the given direction
-function moveTile( obj, dir ){
-    switch( dir ){
-        case "up":
-            obj.style.top = parseFloat(obj.style.top) - 104 + "px";
-            break;
-        case "down":
-            this.style.top = parseFloat(obj.style.top) + 104 + "px";
-            break;
-        case "left":
-            obj.style.left = parseFloat(obj.style.left) - 104 + "px";
-            break;
-        case "right":
-            obj.style.left = parseFloat(obj.style.left) + 104 + "px";
-            break;
-    }
+/*
+ * will make a number of legal moves to 'shuffle' the board
+ */
+function shuffle(){
+
 }
 
-// will return the tile with the top and left coordinates matching x and y
+/*
+ * Will return true if pieces are in original order
+ */
+function checkWin(){
+
+}
+
+/*
+ * will return a reference to the div who's x and y pos match given x and y
+ */
 function getTileAt( x, y ){
     var target = null;
     // loops through all children
@@ -171,20 +176,16 @@ function getTileAt( x, y ){
     return target;
 }
 
-// returns the float of the object's left style
+/*
+ * Parses given object's left value and returns a float
+ */
 function getX(obj) {
     return parseFloat(obj.style.left);
 }
 
-// returns the float of the object's top style
+/*
+ * Parses given object's top value and returns a float
+ */
 function getY(obj) {
     return parseFloat(obj.style.top);
-}
-
-function getOffset(el) {
-    el = el.getBoundingClientRect();
-    return {
-        left: el.left + window.scrollX,
-        top: el.top + window.scrollY
-    }
 }
