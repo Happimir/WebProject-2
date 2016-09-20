@@ -2,10 +2,10 @@
     width: 416px;
     height: 416px;
     vertical-align: middle;
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 20%;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 div > div{
     margin: 0;
@@ -15,14 +15,21 @@ div > div{
     font-weight: bold;
 }
 
-div > div:hover {
+/*div > div:hover {
+    border: 2px solid red;
+    color: red;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+}*/
+.adjacent:hover{
     border: 2px solid red;
     color: red;
     text-align: center;
     line-height: 100px;
     font-weight: bold;
 }
-.a1{
+#a1{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -30,7 +37,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a2{
+#a2{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -38,7 +45,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a3{
+#a3{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -46,7 +53,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a4{
+#a4{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -55,7 +62,7 @@ div > div:hover {
     height: 100px;
     /*margin-right: 60%;*/
 }
-.a5{
+#a5{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -63,7 +70,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a6{
+#a6{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -71,7 +78,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a7{
+#a7{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -79,7 +86,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a8{
+#a8{
     margin: 0;
     float: left;
     background-image: url(background.jpg);
@@ -88,7 +95,7 @@ div > div:hover {
     height: 100px;
     /*margin-right: 60%;*/
 }
-.a9{
+#a9{
     margin: 0;
     float: left;
     background-position: 0px -200px;
@@ -96,7 +103,7 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a10{
+#a10{
     margin: 0;
     float: left;
     background-position: -100px -200px;
@@ -104,7 +111,7 @@ div > div:hover {
     background-image: url(background.jpg);
     height: 100px;
 }
-.a11{
+#a11{
     margin: 0;
     float: left;
     background-position: -200px -200px;
@@ -112,7 +119,7 @@ div > div:hover {
     height: 100px;
     background-image: url(background.jpg);
 }
-.a12{
+#a12{
     margin: 0;
     float: left;
     background-position: -300px -200px;
@@ -121,7 +128,7 @@ div > div:hover {
     background-image: url(background.jpg);
     /*margin-right: 60%;*/
 }
-.a13{
+#a13{
     margin: 0;
     float: left;
     background-position: 0px -300px;
@@ -129,8 +136,7 @@ div > div:hover {
     background-image: url(background.jpg);
     height: 100px;
 }
-.a14{
-    position:relative;
+#a14{
     margin: 0;
     float: left;
     background-position: -100px -300px;
@@ -138,12 +144,19 @@ div > div:hover {
     width: 100px;
     height: 100px;
 }
-.a15 {
-    position: relative;
+#a15 {
+    position: absolute;
     margin: 0;
     float: left;
     background-position: -200px -300px;
     width: 100px;
     background-image: url(background.jpg);
+    height: 100px;
+}
+#a16{
+    position: absolute;
+    margin: 0;
+    float: left;
+    width: 100px;
     height: 100px;
 }
