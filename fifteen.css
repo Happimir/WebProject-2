@@ -3,13 +3,33 @@
     height: 416px;
     vertical-align: middle;
     position: relative;
-    top: 20%;
-    left: 20%;
+    margin: 100px 0 0 -200px;
+    top: 50%;
+    left: 50%;
     /*overflow: hidden;*/
 }
-#controls {
+#controls > button{
+    font-size: 14pt;
+    font-family: cursive;
     text-align: center;
 }
+
+body {
+    background-color: beige;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 14pt;
+    text-align: center;
+}
+
+p {
+    font-family: cursive;
+    font-size: 14pt;
+    text-align: center;
+}
+
 div > div{
     margin: 0;
     border: 2px solid black;
