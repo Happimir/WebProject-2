@@ -16,6 +16,7 @@
 
 body {
     background-color: beige;
+	font-size: 14pt;
 }
 
 h1 {
@@ -25,7 +26,7 @@ h1 {
 }
 
 p {
-    font-family: cursive;
+    font-family: cursive
     font-size: 14pt;
     text-align: center;
 }
@@ -35,22 +36,15 @@ div > div{
     border: 2px solid black;
     text-align: center;
     line-height: 100px;
-    font-weight: bold;
+	font-size: 40pt;
+	font-family: cursive;
 }
 
-/*div > div:hover {
-    border: 2px solid red;
-    color: red;
-    text-align: center;
-    line-height: 100px;
-    font-weight: bold;
-}*/
 .adjacent:hover{
     border: 2px solid red;
     color: red;
     text-align: center;
     line-height: 100px;
-    font-weight: bold;
 }
 #a1{
 
