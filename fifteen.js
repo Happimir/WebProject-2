@@ -35,6 +35,16 @@ window.onload = function () {
         // sets div's position
         children[j].style.left = x + "px";
         children[j].style.top = y + "px";
+        children[j].style.margin = 0;
+        children[j].style.float = "left";
+        children[j].style.width = "100px";
+        children[j].style.height = "100px";
+        children[j].style.position = "absolute";
+        if(j != 15)
+            children[j].style.backgroundImage = "url(background.jpg)";
+        else
+            children[j].style.backgroundImage = "";
+
 
         // increments x and resets it if it is too high
         x += 104;
