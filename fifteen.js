@@ -65,14 +65,6 @@ window.onload = function () {
 };
 
 
-function test() {
-    // can put code here and set event listener for this function
-    // if you want to test a behavior, or read a value at runtime
-
-    /* ------ SHOULD BE DELETED BEFORE SUBMIT ------*/
-}
-
-
 /*
  * This function is called every time a tile is clicked on.
  * Every time an adjacent tile is clicked, it's position must
